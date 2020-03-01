@@ -1,33 +1,131 @@
 import React, {Component} from 'react'
 
-// class NavBar extends Component {
-//
-//     render() {
-//         console.log("Hello");
-//         return(
-//             <div>
-//                 nav
-//             </div>
-//         )
-//     }
-// }
+class NavBar extends Component {
+    state = {
+        navClass: '',
+    }
 
-function NavBar(){
-    const [state, setState] = React.useState(1);
-    console.log(`STATE: ${state}`);
+    componentDidMount() {
+        console.log("mount start")
+        window.addEventListener('scroll', this.getWindowHeight)
+    }
 
-    React.useEffect(() => {
-        // setState(state + 1);
-        console.log(`IN EFFECT`)
-    });
+    componentWillUnmount() {
+        console.log("mount end")
+        window.removeEventListener('scroll', this.getWindowHeight);
+    }
 
-    return(
-        <div>
-            {console.log(`IN DOM`)}
-            NavBar {state}
-            <button onClick={() => setState(state + 1)}>Click</button>
-        </div>
-    )
+    getWindowHeight = () =>{
+        console.log("handle scroll")
+        if(window.pageYOffset > 200 ){
+            this.setState({navClass: 'small'})
+        }
+    }
+
+    render() {
+        console.log("Hello", this.state);
+        return(
+            <div>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+                <p>pa</p>
+            </div>
+        )
+    }
 }
+
+// function NavBar(){
+//     const [state, setState] = React.useState(1);
+//     console.log(`STATE: ${state}`);
+//
+//     React.useEffect(() => {
+//         // setState(state + 1);
+//         console.log(`IN EFFECT`)
+//     });
+//
+//     return(
+//         <div>
+//             {console.log(`IN DOM`)}
+//             NavBar {state}
+//             <button onClick={() => setState(state + 1)}>Click</button>
+//         </div>
+//     )
+// }
 
 export default NavBar
